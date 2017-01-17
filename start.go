@@ -241,6 +241,7 @@ func runStart(cmd *Command, args []string) {
 	}
 
 	go f.monitorInterrupt()
+	OSInit()
 
 	// When teardown fires, start the grace timer
 	f.teardown.FallHook = func() {

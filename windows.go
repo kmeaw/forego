@@ -8,6 +8,11 @@ import (
 
 const osHaveSigTerm = false
 
+func OSInit() {
+	// NOP on windows for now.
+	return
+}
+
 func ShellInvocationCommand(interactive bool, root, command string) []string {
 	return []string{"cmd", "/C", command}
 }

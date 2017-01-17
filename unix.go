@@ -4,10 +4,15 @@ package main
 
 import (
 	"fmt"
+	reaper "github.com/ramr/go-reaper"
 	"syscall"
 )
 
 const osHaveSigTerm = true
+
+func OSInit() {
+	go reaper.Reap()
+}
 
 func ShellInvocationCommand(interactive bool, root, command string) []string {
 	shellArgument := "-c"
